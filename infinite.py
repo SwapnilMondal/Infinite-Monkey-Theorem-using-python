@@ -10,7 +10,6 @@ file = open('result.txt','w')
 true_string = input('Enter a string: ')
 length = len(true_string)
 file.write("The string to be experimented on: " + true_string)
-#print(length)
 
 # a function to generate random strings
 
@@ -21,12 +20,9 @@ def generate():
 ## returns the value to the variable in use
     return randchar
 
-#hey = generate()
-#print(hey)
-
 ## function for defining score which will score the list's viability
 def score(true_string, random_string):
-## we are splitting the string into parts to compare
+## splitting the string into parts to compare
     true_string = true_string.split()
     random_string = random_string.split()
 ## for comparision we need sets of lists
