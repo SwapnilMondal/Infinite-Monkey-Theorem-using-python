@@ -4,10 +4,11 @@ import string
 import random
 ## to monitor the time taken by the program
 import timeit
+
 file = open('result.txt','w')
 
 ## declaring the string for the infinite monkey theorem problem
-true_string = input('Enter a string: ')
+true_string = input('Enter a string in lowercase only: ')
 length = len(true_string)
 file.write("The string to be experimented on: " + true_string)
 
@@ -20,9 +21,10 @@ def generate():
 ## returns the value to the variable in use
     return randchar
 
+
 ## function for defining score which will score the list's viability
 def score(true_string, random_string):
-## splitting the string into parts to compare
+## we are splitting the string into parts to compare
     true_string = true_string.split()
     random_string = random_string.split()
 ## for comparision we need sets of lists
@@ -57,11 +59,10 @@ def main():
 
         print(score_update)
 
-## for learning what value has the program scored yet
+## for learning how many times the monkey has pressed a sequence
         run = run + 1
 
-## loop for printing the value at every 1000 runs and printing the scores
-        file.write('\n'+ random_string + ' ' + str(score_update)+ ' ' + str(run))
+    file.write('\n'+ 'The probability of the monkey typing the sequence is ' + '1/%d'%(run))
 
 ## Let us see the results ...
 ## timer to check the total time
